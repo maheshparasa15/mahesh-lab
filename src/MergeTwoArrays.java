@@ -9,8 +9,5 @@ public class MergeTwoArrays {
         System.arraycopy(b, 0, newIntComb, a.length, b.length);
         Arrays.stream(newIntComb).filter(x -> x != 0).sorted().forEach(System.out::println);
 
-
-
-
     }
 }

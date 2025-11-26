@@ -70,6 +70,7 @@ public class StreamQuestions {
                     .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                     .entrySet().stream().filter(e -> e.getValue() == 1).findFirst().get().getKey()); // p
 
+
             // 18. Reverse each word in a sentence
             String sentence = "hello world java streams";
             System.out.println("Q18: Reverse words → " + Arrays.stream(sentence.split(" "))
@@ -85,5 +86,10 @@ public class StreamQuestions {
 
             // 20. Find longest string
             System.out.println("Q20: Longest string → " + strings.stream().max(Comparator.comparingInt(String::length)).get()); // banana
+
+            // 21. non-repeating characters
+            String stringValue = "aabbccbddeffg";
+            stringValue.chars().mapToObj(c -> (char)c)
+                    .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter(x -> x.getValue() == 1).forEach(System.out::println);
         }
     }
