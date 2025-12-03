@@ -1,4 +1,4 @@
-package test;
+package PracticePrograms;
 
 public class MaxSubArrayTest {
     public static void main(String[] args) {
